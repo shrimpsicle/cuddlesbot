@@ -1,8 +1,6 @@
 var Discord = require('discord.io');
-
 var logger = require('winston');
 var auth = require('./auth.json');
-
 
 //log settings
 logger.remove(logger.transports.Console);
@@ -11,24 +9,104 @@ logger.add(logger.transports.Console, {
 });
 logger.level = 'debug';
 
-
-//Initialize bot (potentially replace actual token with just auth.token)
+//Initialize bot
 var bot = new Discord.Client({
     token: auth.token,
     autorun: true
 });
 
-
-var imgArray = ["https://imgur.com/a/5swlK", "https://imgur.com/a/5hHnD", "https://imgur.com/a/ZeQv7", "https://imgur.com/a/0xrVs", "https://imgur.com/a/olw2O", "https://imgur.com/a/iLxs9", "https://imgur.com/a/iSiBV", "https://imgur.com/a/leSWB", "https://imgur.com/a/1PG2B", "https://imgur.com/a/xhXWt", "https://imgur.com/a/q1Me2", "https://imgur.com/a/E2J22", "https://imgur.com/a/1hkl5", "https://imgur.com/a/jjA6Q", "https://imgur.com/a/gmMHs", "https://imgur.com/a/XLqxU"];
-var rand = imgArray[Math.floor(Math.random() * imgArray.length
+//CUDDLES PICS
+var imgArrayOne = ["img1",
+"img1",
+"img1",
+"img1",
+"img1",
+"img1",
+"img1",
+"img1",
+"img1",
+"img1",
+"img1",
+"img1",
+"img1",
+"img1",
+"img1",
+"img1"];
+var randOne = imgArrayOne[Math.floor(Math.random() * imgArrayOne.length
 )];
 
+//SHADOW PICS
+var imgArrayTwo = ["img2",
+"img2",
+"img2",
+"img2",
+"img2",
+"img2",
+"img2",
+"img2",
+"img2",
+"img2",
+"img2",
+"img2",
+"img2",
+"img2",
+"img2",
+"img2"];
+var randTwo = imgArrayTwo[Math.floor(Math.random() * imgArrayTwo.length
+)];
+
+//BAILEY PICS
+var imgArrayThree = ["img3",
+"img3",
+"img3",
+"img3",
+"img3",
+"img3",
+"img3",
+"img3",
+"img3",
+"img3",
+"img3",
+"img3",
+"img3",
+"img3",
+"img3",
+"img3"];
+var randThree = imgArrayThree[Math.floor(Math.random() * imgArrayThree.length
+)];
+
+//ZOE PICS
+var imgArrayFour = ["img4",
+"img4",
+"img4",
+"img4",
+"img4",
+"img4",
+"img4",
+"img4",
+"img4",
+"img4",
+"img4",
+"img4",
+"img4",
+"img4",
+"img4",
+"img4"];
+var randFour = imgArrayFour[Math.floor(Math.random() * imgArrayFour.length
+)];
 
 bot.on('ready', function (evt) {
     logger.info('Connected');
     logger.info('Logged in as: ');
-    logger.info(bot.username + ' - (' + bot.id + ')');
+    logger.info(bot.username + ' - (' + bot.discriminator + ') - (' + bot.id + ')');
     logger.info('Ready player one!');
+    //dog ascii art
+    logger.info('                  .--~~,__');
+    logger.info('    :-....,-------`~~`._./');
+    logger.info('     `-,,,  ,_      ;`~U`');
+    logger.info('      _,-`` ,``-__; `--.');
+    logger.info('     (_/`~~      ````(;`');
+
 });
     
 bot.on('message', function (user, userID, channelID, message, evt) {    
@@ -44,16 +122,67 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             case 'cuddles':
                 bot.sendMessage({
                     to: 269315209385082880,
-                    message: rand
+                    message: (randOne)
                 });
+
+            break;
+
+            case 'shadow':
+                bot.sendMessage({
+                    to: 269315209385082880,
+                    message: (randTwo)
+                });
+
+            break;
+
+            case 'bailey':
+                bot.sendMessage({
+                    to: 269315209385082880,
+                    message: (randThree)
+                });
+
+            break;
+
+            case 'zoe':
+            bot.sendMessage({
+                to: 269315209385082880,
+                message: (randFour)
+            });
+
+            break;
+
+            case 'thisbitchempty':
+            bot.sendMessage({
+                to: 269315209385082880,
+                message: ('YEET')
+            });
+
+            break;
+
+            case 'goodnight':
+            bot.sendMessage({
+                to: 269315209385082880,
+                message: ('Nighty night, ' + user +'!')
+            });
+
+            break;
+
+            break;
+
+            case 'night':
+            bot.sendMessage({
+                to: 269315209385082880,
+                message: ('Nighty night, ' + user +'!')
+            });
 
             break;
 
             default:
                 bot.sendMessage({
                     to: 269315209385082880,
-                    message: "Can't understand your nonsense!"
+                    message: ("Can't understand your nonsense!")
                 });
+            }
         }
     }
-})
+,)
