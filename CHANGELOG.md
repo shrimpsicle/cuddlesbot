@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Added package.json
 - Added auth.json
 - Authorized to Discord
+- Uploaded to Heroku
 
 ### Removed
 - Decided not to upload all of the node_modules files.
