@@ -1,4 +1,4 @@
-Thanks to https://github.com/renesansz for the help.
+Thanks to https://github.com/renesansz and https://github.com/chalda for the help.
 
 Customized bot for a specific server meant to respond to messages such as !cuddles and !shadow with pictures of dogs named Cuddles and Shadow.
 
