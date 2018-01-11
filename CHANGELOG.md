@@ -7,6 +7,20 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 - None yet!
 
+## [1.0.2] - 2018-01-10
+### Added
+- channelID identifiers
+- userID identifiers
+- two new commands (dixie, hero)
+- Added a line two to Procfile (literally, "node bot.js")
+
+### Changed
+- "img()" placeholders with "cuddles1" or "bailey5"
+- {Playing} "with doggies :D" to {Playing} "with my big sis :)"
+
+### Removed
+- removed "darren" command
+
 ## [1.0.1] - 2018-01-02
 ### Added
 - 3 new arrays (literally, imgArrayTwo, imgArrayThree, imgArrayFour)
