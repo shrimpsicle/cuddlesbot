@@ -1,2 +1,2 @@
 web: npm start
-node bot.js
+node: node bot.js
