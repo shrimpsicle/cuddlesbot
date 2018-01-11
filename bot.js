@@ -16,7 +16,7 @@ var bot = new Discord.Client({
 });
 
 //CUDDLES PICS
-var imgArrayOne = ["img1",
+var imgArrayOne = ["img1", 
 "img1",
 "img1",
 "img1",
@@ -95,6 +95,46 @@ var imgArrayFour = ["img4",
 var randFour = imgArrayFour[Math.floor(Math.random() * imgArrayFour.length
 )];
 
+//DIXIE PICS
+var imgArrayFive = ["img5",
+"img5",
+"img5",
+"img5",
+"img5",
+"img5",
+"img5",
+"img5",
+"img5",
+"img5",
+"img5",
+"img5",
+"img5",
+"img5",
+"img5",
+"img5"];
+var randFive = imgArrayFive[Math.floor(Math.random() * imgArrayFive.length
+)];
+
+//HERO PICS
+var imgArraySix = ["img6",
+"img6",
+"img6",
+"img6",
+"img6",
+"img6",
+"img6",
+"img6",
+"img6",
+"img6",
+"img6",
+"img6",
+"img6",
+"img6",
+"img6",
+"img6"];
+var randSix = imgArraySix[Math.floor(Math.random() * imgArraySix.length
+)];
+
 bot.on('ready', function (evt) {
     logger.info('Connected');
     logger.info('Logged in as: ');
@@ -106,9 +146,18 @@ bot.on('ready', function (evt) {
     logger.info('     `-,,,  ,_      ;`~U`');
     logger.info('      _,-`` ,``-__; `--.');
     logger.info('     (_/`~~      ````(;`');
+    bot.setPresence({ game: { name: "with my big sis :)" } });
 
 });
     
+bot.on('message', function (bot, message, suffix) {
+    var args = suffix.split(' ');
+    var user = args.shift();
+    var message = args.join(' ');
+    if(user.startsWith('<@'))
+        user = user.substr(2,user,length-3);
+});
+
 bot.on('message', function (user, userID, channelID, message, evt) {    
     //listens for message with !
     if (message.substring(0,1) == '!') {
@@ -121,68 +170,82 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             //commands run
             case 'cuddles':
                 bot.sendMessage({
-                    to: 269315209385082880,
+                    to: channelID,
                     message: (randOne)
                 });
 
             break;
 
-            case 'shadow':
-                bot.sendMessage({
-                    to: 269315209385082880,
-                    message: (randTwo)
-                });
+                case 'shadow':
+                    bot.sendMessage({
+                        to: channelID,
+                        message: (randTwo)
+                    });
 
             break;
 
-            case 'bailey':
-                bot.sendMessage({
-                    to: 269315209385082880,
-                    message: (randThree)
-                });
+                case 'bailey':
+                    bot.sendMessage({
+                        to: channelID,
+                        message: (randThree)
+                    });
 
             break;
 
-            case 'zoe':
-            bot.sendMessage({
-                to: 269315209385082880,
-                message: (randFour)
-            });
+                case 'zoe':
+                    bot.sendMessage({
+                        to: channelID,
+                        message: (randFour)
+                    });
 
             break;
 
-            case 'thisbitchempty':
-            bot.sendMessage({
-                to: 269315209385082880,
-                message: ('YEET')
-            });
+                case 'dixie':
+                    bot.sendMessage({
+                        to: channelID,
+                        message: (randFive)
+                    });
 
             break;
 
-            case 'goodnight':
-            bot.sendMessage({
-                to: 269315209385082880,
-                message: ('Nighty night, ' + user +'!')
-            });
+                case 'hero':
+                    bot.sendMessage({
+                        to: channelID,
+                        message: (randSix)
+                    });
 
             break;
 
-            break;
-
-            case 'night':
-            bot.sendMessage({
-                to: 269315209385082880,
-                message: ('Nighty night, ' + user +'!')
-            });
+                case 'thisbitchempty':
+                    bot.sendMessage({
+                        to: channelID,
+                        message: ('YEET')
+                    });
 
             break;
 
-            default:
-                bot.sendMessage({
-                    to: 269315209385082880,
-                    message: ("Can't understand your nonsense!")
-                });
+                case 'goodnight':
+                    bot.sendMessage({
+                        to: channelID,
+                        message: ('Nighty night, ' + user +'! ' + randOne)
+                    });
+
+            break;
+
+                case 'night':
+                    bot.sendMessage({
+                        to: channelID,
+                        message: ('Nighty night, ' + user +'! ' + randOne)
+                    });
+
+            break;
+
+                default:
+                    bot.sendMessage({
+                        to: channelID,
+                        message: ("Can't understand your nonsense!")
+                    });
+                }
             }
         }
-    }
 ,)
