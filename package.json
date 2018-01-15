@@ -1,6 +1,6 @@
 {
     "name": "cuddlesbot",
-    "version": "1.0.1",
+    "version": "1.0.3",
     "dscription": "Chat moderator personified as a loved pet",
     "main": "bot.js",
     "author": "Jaden O'Dell",
