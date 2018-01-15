@@ -15,126 +15,6 @@ var bot = new Discord.Client({
     autorun: true
 });
 
-//CUDDLES PICS
-var imgArrayOne = ["img1", 
-"img1",
-"img1",
-"img1",
-"img1",
-"img1",
-"img1",
-"img1",
-"img1",
-"img1",
-"img1",
-"img1",
-"img1",
-"img1",
-"img1",
-"img1"];
-var randOne = imgArrayOne[Math.floor(Math.random() * imgArrayOne.length
-)];
-
-//SHADOW PICS
-var imgArrayTwo = ["img2",
-"img2",
-"img2",
-"img2",
-"img2",
-"img2",
-"img2",
-"img2",
-"img2",
-"img2",
-"img2",
-"img2",
-"img2",
-"img2",
-"img2",
-"img2"];
-var randTwo = imgArrayTwo[Math.floor(Math.random() * imgArrayTwo.length
-)];
-
-//BAILEY PICS
-var imgArrayThree = ["img3",
-"img3",
-"img3",
-"img3",
-"img3",
-"img3",
-"img3",
-"img3",
-"img3",
-"img3",
-"img3",
-"img3",
-"img3",
-"img3",
-"img3",
-"img3"];
-var randThree = imgArrayThree[Math.floor(Math.random() * imgArrayThree.length
-)];
-
-//ZOE PICS
-var imgArrayFour = ["img4",
-"img4",
-"img4",
-"img4",
-"img4",
-"img4",
-"img4",
-"img4",
-"img4",
-"img4",
-"img4",
-"img4",
-"img4",
-"img4",
-"img4",
-"img4"];
-var randFour = imgArrayFour[Math.floor(Math.random() * imgArrayFour.length
-)];
-
-//DIXIE PICS
-var imgArrayFive = ["img5",
-"img5",
-"img5",
-"img5",
-"img5",
-"img5",
-"img5",
-"img5",
-"img5",
-"img5",
-"img5",
-"img5",
-"img5",
-"img5",
-"img5",
-"img5"];
-var randFive = imgArrayFive[Math.floor(Math.random() * imgArrayFive.length
-)];
-
-//HERO PICS
-var imgArraySix = ["img6",
-"img6",
-"img6",
-"img6",
-"img6",
-"img6",
-"img6",
-"img6",
-"img6",
-"img6",
-"img6",
-"img6",
-"img6",
-"img6",
-"img6",
-"img6"];
-var randSix = imgArraySix[Math.floor(Math.random() * imgArraySix.length
-)];
-
 bot.on('ready', function (evt) {
     logger.info('Connected');
     logger.info('Logged in as: ');
@@ -149,13 +29,17 @@ bot.on('ready', function (evt) {
     bot.setPresence({ game: { name: "with my big sis :)" } });
 
 });
-    
+
 bot.on('message', function (bot, message, suffix) {
     var args = suffix.split(' ');
     var user = args.shift();
     var message = args.join(' ');
     if(user.startsWith('<@'))
         user = user.substr(2,user,length-3);
+});
+
+bot.on("disconnect", function(evt) {
+	logger.info("Disconnected!");
 });
 
 bot.on('message', function (user, userID, channelID, message, evt) {    
@@ -166,85 +50,72 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 
         args = args.splice(1);
 
+        var fileArrayOne = ["./dog/cuddles/cuddles1.JPG", "./cuddles2.JPG", "./dog/cuddles/cuddles3.JPG", "./dog/cuddles/cuddles4.JPG", "./dog/cuddles/cuddles5.JPG",
+        "./dog/cuddles/cuddles6.JPG", "./dog/cuddles/cuddles7.JPG", "./dog/cuddles/cuddles8.JPG", "./dog/cuddles/cuddles9.JPG", "./dog/cuddles/cuddles10.JPG",
+        "./dog/cuddles/cuddles11.JPG", "./dog/cuddles/cuddles12.JPG", "./dog/cuddles/cuddles13.JPG", "./dog/cuddles/cuddles14.JPG", "./dog/cuddles/cuddles15.JPG",
+        "./dog/cuddles/cuddles16.JPG", "./dog/cuddles/cuddles17.JPG", "./dog/cuddles/cuddles18.JPG", "./dog/cuddles/cuddles19.JPG", "./dog/cuddles/cuddles20.JPG",
+        "./dog/cuddles/cuddles21.JPG", "./dog/cuddles/cuddles22.JPG", "./dog/cuddles/cuddles23.JPG"];
+        var fileArrayTwo = ["./dog/shadow/shadow1.JPG"];
+        var fileArrayThree = [];
+        var fileArrayFour = [];
+        var fileArrayFive = [];
+        var fileArraySix = [];
+        var randOne = fileArrayOne[Math.floor(Math.random() * fileArrayOne.length)];
+        var randTwo = fileArrayTwo[Math.floor(Math.random() * fileArrayTwo.length)];
+        var randThree = fileArrayThree[Math.floor(Math.random() * fileArrayThree.length)];
+        var randFour = fileArrayFour[Math.floor(Math.random() * fileArrayFour.length)];
+        var randFive = fileArrayFive[Math.floor(Math.random() * fileArrayFive.length)];
+        var randSix = fileArraySix[Math.floor(Math.random() * fileArraySix.length)];
+
         switch(cmd) {
             //commands run
             case 'cuddles':
-                bot.sendMessage({
-                    to: channelID,
-                    message: (randOne)
-                });
+                bot.uploadFile({to: channelID, file: (randOne)});
 
             break;
 
                 case 'shadow':
-                    bot.sendMessage({
-                        to: channelID,
-                        message: (randTwo)
-                    });
+                    bot.uploadFile({to: channelID, file: (randTwo)});
 
             break;
 
                 case 'bailey':
-                    bot.sendMessage({
-                        to: channelID,
-                        message: (randThree)
-                    });
+                    bot.uploadFile({to: channelID, file: (randThree)});
 
             break;
 
                 case 'zoe':
-                    bot.sendMessage({
-                        to: channelID,
-                        message: (randFour)
-                    });
+                    bot.uploadFile({to: channelID, file: (randFour)});
 
             break;
 
                 case 'dixie':
-                    bot.sendMessage({
-                        to: channelID,
-                        message: (randFive)
-                    });
+                    bot.uploadFile({to: channelID, file: (randFive)});
 
             break;
 
                 case 'hero':
-                    bot.sendMessage({
-                        to: channelID,
-                        message: (randSix)
-                    });
+                    bot.uploadFile({to: channelID, file: (randSix)});
 
             break;
 
                 case 'thisbitchempty':
-                    bot.sendMessage({
-                        to: channelID,
-                        message: ('YEET')
-                    });
+                    bot.sendMessage({to: channelID, message: ('YEET')});
 
             break;
 
                 case 'goodnight':
-                    bot.sendMessage({
-                        to: channelID,
-                        message: ('Nighty night, ' + user +'! ' + randOne)
-                    });
+                    bot.sendMessage({to: channelID, message: ('Nighty night, ' + user +'! ')});
 
             break;
 
                 case 'night':
-                    bot.sendMessage({
-                        to: channelID,
-                        message: ('Nighty night, ' + user +'! ' + randOne)
-                    });
+                    bot.sendMessage({to: channelID, message: ('Nighty night, ' + user +'! ')});
 
             break;
 
                 default:
-                    bot.sendMessage({
-                        to: channelID,
-                        message: ("Can't understand your nonsense!")
-                    });
+                    bot.sendMessage({to: channelID, message: ("Can't understand your nonsense!")});
                 }
             }
         }
