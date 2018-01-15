@@ -5,7 +5,23 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
-- None yet!
+-None yet!
+
+## [1.0.3] - 2018-01-14
+### Added
+- Changed .sendMessage on dog photo commands to .uploadFile
+- Added .uploadFile capability, configuring arrays
+- Added app.json
+- Added Procfile settings
+- Configured arrays
+- Added paths
+- Configured rand and math
+
+### Changed
+- Whitespace/linespacing
+
+### Removed
+- Bad file links
 
 ## [1.0.2] - 2018-01-10
 ### Added
