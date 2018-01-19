@@ -50,22 +50,33 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 
         args = args.splice(1);
 
-        var fileArrayOne = ["./dog/cuddles/cuddles1.JPG", "./cuddles2.JPG", "./dog/cuddles/cuddles3.JPG", "./dog/cuddles/cuddles4.JPG", "./dog/cuddles/cuddles5.JPG",
+        //cuddles
+        var dogArrayOne = ["./dog/cuddles/cuddles1.JPG", "./cuddles2.JPG", "./dog/cuddles/cuddles3.JPG", "./dog/cuddles/cuddles4.JPG", "./dog/cuddles/cuddles5.JPG",
         "./dog/cuddles/cuddles6.JPG", "./dog/cuddles/cuddles7.JPG", "./dog/cuddles/cuddles8.JPG", "./dog/cuddles/cuddles9.JPG", "./dog/cuddles/cuddles10.JPG",
-        "./dog/cuddles/cuddles11.JPG", "./dog/cuddles/cuddles12.JPG", "./dog/cuddles/cuddles13.JPG", "./dog/cuddles/cuddles14.JPG", "./dog/cuddles/cuddles15.JPG",
-        "./dog/cuddles/cuddles16.JPG", "./dog/cuddles/cuddles17.JPG", "./dog/cuddles/cuddles18.JPG", "./dog/cuddles/cuddles19.JPG", "./dog/cuddles/cuddles20.JPG",
-        "./dog/cuddles/cuddles21.JPG", "./dog/cuddles/cuddles22.JPG", "./dog/cuddles/cuddles23.JPG"];
-        var fileArrayTwo = ["./dog/shadow/shadow1.JPG"];
-        var fileArrayThree = [];
-        var fileArrayFour = [];
-        var fileArrayFive = [];
-        var fileArraySix = [];
-        var randOne = fileArrayOne[Math.floor(Math.random() * fileArrayOne.length)];
-        var randTwo = fileArrayTwo[Math.floor(Math.random() * fileArrayTwo.length)];
-        var randThree = fileArrayThree[Math.floor(Math.random() * fileArrayThree.length)];
-        var randFour = fileArrayFour[Math.floor(Math.random() * fileArrayFour.length)];
-        var randFive = fileArrayFive[Math.floor(Math.random() * fileArrayFive.length)];
-        var randSix = fileArraySix[Math.floor(Math.random() * fileArraySix.length)];
+        "./dog/cuddles/cuddles11.JPG", "./dog/cuddles/cuddles12.JPG", "./dog/cuddles/cuddles13.JPG", "./dog/cuddles/cuddles14.JPG",
+        "./dog/cuddles/cuddles15.JPG", "./dog/cuddles/cuddles16.JPG", "./dog/cuddles/cuddles17.JPG", "./dog/cuddles/cuddles18.JPG", "./dog/cuddles/cuddles19.JPG",
+        "./dog/cuddles/cuddles20.JPG", "./dog/cuddles/cuddles21.JPG", "./dog/cuddles/cuddles22.JPG", "./dog/cuddles/cuddles23.JPG", "./dog/cuddles/cuddles24.JPG",
+        "./dog/cuddles/cuddles25.JPG", "./dog/cuddles/cuddles26.JPG", "./dog/cuddles/cuddles27.JPG"];
+        //shadow
+        var dogArrayTwo = ["./dog/shadow/shadow1.JPG", "./dog/shadow/shadow2.JPG", "./dog/shadow/shadow3.JPG", "./dog/shadow/shadow4.JPG","./dog/shadow/shadow5.JPG",
+        "./dog/shadow/shadow6.JPG", "./dog/shadow/shadow7.JPG", "./dog/shadow/shadow8.JPG", "./dog/shadow/shadow9.JPG","./dog/shadow/shadow10.JPG",
+        "./dog/shadow/shadow11.JPG", "./dog/shadow/shadow12.JPG", "./dog/shadow/shadow13.JPG", "./dog/shadow/shadow14.JPG", "./dog/shadow/shadow15.JPG",
+        "./dog/shadow/shadow16.JPG", "./dog/shadow/shadow17.JPG"];
+        //bailey
+        var dogArrayThree = ["./dog/bailey/bailey1.JPG", "./dog/bailey/bailey2.JPG"];
+        //zoe
+        var dogArrayFour = [];
+        //dixie
+        var dogArrayFive = ["./dog/dixie/dixie1.JPG"];
+        //hero
+        var dogArraySix = [];
+        //generators
+        var randOne = dogArrayOne[Math.floor(Math.random() * dogArrayOne.length)]
+        var randTwo = dogArrayTwo[Math.floor(Math.random() * dogArrayTwo.length)]
+        var randThree = dogArrayThree[Math.floor(Math.random() * dogArrayThree.length)]
+        var randFour = dogArrayFour[Math.floor(Math.random() * dogArrayFour.length)]
+        var randFive = dogArrayFive[Math.floor(Math.random() * dogArrayFive.length)]
+        var randSix = dogArraySix[Math.floor(Math.random() * dogArraySix.length)];
 
         switch(cmd) {
             //commands run
@@ -73,47 +84,38 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                 bot.uploadFile({to: channelID, file: (randOne)});
 
             break;
-
                 case 'shadow':
                     bot.uploadFile({to: channelID, file: (randTwo)});
 
             break;
-
                 case 'bailey':
                     bot.uploadFile({to: channelID, file: (randThree)});
 
             break;
-
                 case 'zoe':
                     bot.uploadFile({to: channelID, file: (randFour)});
 
             break;
-
                 case 'dixie':
                     bot.uploadFile({to: channelID, file: (randFive)});
 
             break;
-
                 case 'hero':
                     bot.uploadFile({to: channelID, file: (randSix)});
 
             break;
-
                 case 'thisbitchempty':
                     bot.sendMessage({to: channelID, message: ('YEET')});
 
             break;
-
                 case 'goodnight':
                     bot.sendMessage({to: channelID, message: ('Nighty night, ' + user +'! ')});
 
             break;
-
                 case 'night':
                     bot.sendMessage({to: channelID, message: ('Nighty night, ' + user +'! ')});
 
             break;
-
                 default:
                     bot.sendMessage({to: channelID, message: ("Can't understand your nonsense!")});
                 }
