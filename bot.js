@@ -78,7 +78,6 @@ bot.on('message', function (user, userID, channelID, message, evt) {
         var peteArray = ["./cat/pete/pete1.JPG"];
         var nashArray = ["./cat/nash/nash1.JPG", "./cat/nash/nash2.JPG"];
         var peralta = "./dog/peralta.PNG";
-        var hellyeha = "./dog/hellyeha.JPG";
     
         var cuddles = cuddlesArray[Math.floor(Math.random() * cuddlesArray.length)];
         var shadow = shadowArray[Math.floor(Math.random() * shadowArray.length)];
@@ -123,9 +122,6 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             break;
                 case 'thisbitchempty':
                     bot.sendMessage({to: channelID, message: ('YEET')});
-            break;
-                case 'hellyeha':
-                    bot.sendMessage({to: channelID, file: (hellyeha)});
             break;
                 case 'goodnight':
                     bot.sendMessage({to: channelID, msg: ('Nighty night, ' + user +'! ')});
