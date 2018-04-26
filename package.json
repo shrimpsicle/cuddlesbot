@@ -1,12 +1,12 @@
 {
     "name": "cuddlesbot",
     "version": "1.0.3",
-    "dscription": "Chat moderator personified as a loved pet",
+    "description": "Chat moderator personified as a loved pet",
     "main": "bot.js",
     "author": "Jaden O'Dell",
     "license": "BSD 3-Clause",
     "dependencies": {
-        "discord.io": "github:woor/discord.io#gateway_v6",
+        "discord.io": "^2.5.3",
         "winston": "^2.4.2"
     }
 }
